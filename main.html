@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+    <head>
+        <meta charset="utf-8">
+     
+        <title>Strat</title>
+
+    </head>
+    <body>
+        <input type="text" id='time' >
+        <button id='btn'>Adicionar Time </button>
+         
+        <h2>Times participantes</h2>
+
+        <ul id="list">
+        
+        </ul>
+        
+        <button id='gobt'>GO!</button>
+
+        <script>
+    var $lista = document.querySelector('ul');
+    var $time = document.querySelector('#time');
+    var $botao = document.querySelector('#btn');
+    var $gob = document.querySelector('#gobt');
+
+    $botao.addEventListener('click' ,addTime);
+    $gob.addEventListener('click',go);
+
+    function addTime(){
+    var item = '<li>' + $time.value + '</li>';
+    
+    if(item.length == 9 ){
+        alert("espaço vazio!")
+        return false;
+    }
+      else {
+    $lista.innerHTML += item;
+    $time.value = '';
+    $time.focus();
+    }
+      }
+
+      function go(){
+        var todos = document.getElementById("list").getElementsByTagName("li");
+        for(let i=0 ; i<todos.length; i++){
+  
+            console.log(todos[i]);
+        }
+
+      }
+
+    
+
+        </script>
+
+</body>
+</html>
