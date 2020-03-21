@@ -4,6 +4,7 @@
         <meta charset="utf-8">
      
         <title>Strat</title>
+        <script src="mec.js"></script>
 
     </head>
     <body>
@@ -12,47 +13,30 @@
          
         <h2>Times participantes</h2>
 
-        <ul id="list">
+        <ul id="listo">
         
         </ul>
-        
         <button id='gobt'>GO!</button>
+        <br>
+        
+        <ul id ="versus">
+
+        </ul>
+        
+        
 
         <script>
-    var $lista = document.querySelector('ul');
+    var $lista = document.querySelector('#listo');
     var $time = document.querySelector('#time');
     var $botao = document.querySelector('#btn');
     var $gob = document.querySelector('#gobt');
 
     $botao.addEventListener('click' ,addTime);
     $gob.addEventListener('click',go);
-
-    function addTime(){
-    var item = '<li>' + $time.value + '</li>';
-    
-    if(item.length == 9 ){
-        alert("espaço vazio!")
-        return false;
-    }
-      else {
-    $lista.innerHTML += item;
-    $time.value = '';
-    $time.focus();
-    }
-      }
-
-      function go(){
-        var todos = document.getElementById("list").getElementsByTagName("li");
-        for(let i=0 ; i<todos.length; i++){
-  
-            console.log(todos[i]);
-        }
-
-      }
-
     
 
-        </script>
+
+      </script>
 
 </body>
 </html>
